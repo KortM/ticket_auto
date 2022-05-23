@@ -27,14 +27,6 @@ if exists('config.ini'):
         #options.binary_location = 'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe'
         #driver = webdriver.Chrome(executable_path='chromedriver.exe', chrome_options=options)
         driver = webdriver.Chrome(executable_path=config['Default']['ChromeDriverPath'], chrome_options=options)
-    else:
-        print('Нет конфигурации!')
-        print('''
-            Нужно сделать следующее, в файле config.ini:
-            1.В ChromePath прописать = путь/до/хрома
-            2.В ChromeDriverPath прописать = путь/до/драйвера хрома (скачать можно по https://chromedriver.chromium.org/downloads)/ 
-            3.headless устанавливается опционально, принимает значения True/False
-        ''')
 else:
     print('Нет файла конфигурации - config.ini')
     with open('config.ini', 'w') as f:
@@ -45,10 +37,10 @@ else:
             'ChromeDriverPath': 'chromedriver.exe'
         }
         config['User'] = {
-            'fastcome_user_name': 'marchenkoia',
-            'fastcom_pwd': '1234',
-            'moncms_user_name': 'marchenkoia',
-            'moncms_user_pwd': '12345'
+            'fastcome_user_name': 'your_username',
+            'fastcom_pwd': 'your_fast_password',
+            'moncms_username': 'monc_username',
+            'moncms_user_pwd': 'monc_password'
         }
         config.write(f)
 
